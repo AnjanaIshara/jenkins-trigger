@@ -1,6 +1,6 @@
 def jenkins_agent = 'master'
 def readprop = readProperties file: 'variable.properties'
-
+def TZ = readprop['TZ']
 pipeline{
     agent { label "$jenkins_agent" }
 
@@ -9,9 +9,7 @@ pipeline{
         stage('Welcome to jenkins') {
             steps {
                 script {
-                    echo "Hello anjana How are you?"
-                    echo "${readprop['TZ']}"
-                    
+                    echo "Hello anjana How are you?"  
                 }
             }
         }
