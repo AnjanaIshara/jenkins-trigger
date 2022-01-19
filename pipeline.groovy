@@ -1,4 +1,4 @@
-def jenkins_agent = 'Built-In Node'
+def jenkins_agent = 'master'
 
 pipeline{
     agent { label "$jenkins_agent" }
