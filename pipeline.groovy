@@ -6,9 +6,10 @@ pipeline{
     environment {
         readprop = readProperties file: 'variable.properties'
         SCHEDULE = "$readprop.SCHEDULE"
+        TZ = "$readprop.TZ"
     }
     triggers {
-        cron("")
+        cron("${TZ} \n ${SCHEDULE}")
     }
 
     stages{
