@@ -3,6 +3,10 @@ def jenkins_agent = 'master'
 pipeline{
     agent { label "$jenkins_agent" }
 
+    triggers {
+        cron("*/1 * * * *")
+    }
+
     stages{
         stage('Welcome to jenkins') {
             steps {
