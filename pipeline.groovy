@@ -1,7 +1,7 @@
-def jenkins_agent = 'any'
+def jenkins_agent = 'master'
 
 pipeline{
-    agent { label ${jenkins_agent}}
+    agent none
 
     stages{
         stage('Welcome to jenkins') {
