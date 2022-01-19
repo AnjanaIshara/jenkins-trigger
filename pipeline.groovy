@@ -3,6 +3,12 @@ def jenkins_agent = 'master'
 pipeline{
     agent { label "$jenkins_agent" }
 
+    triggers {
+        parameterizedCron('''
+            */2 * * * *
+        ''')
+    }
+
     environment {
         readprop = readProperties file: 'variable.properties'
         SCHEDULE = "$readprop.SCHEDULE"
@@ -19,8 +25,5 @@ pipeline{
                 }
             }
         }
-    }
-    triggers {
-        cron("")
     }
 }
