@@ -1,4 +1,4 @@
-def jenkins_agent = 'any'
+def jenkins_agent = any
 
 pipeline{
     agent { label "${jenkins_agent}"}
