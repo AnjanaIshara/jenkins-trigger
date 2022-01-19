@@ -2,7 +2,10 @@ def jenkins_agent = 'master'
 
 pipeline{
     agent none
-
+    
+    trigger{
+        cron("* * * * *")
+    }
     stages{
         stage('Welcome to jenkins') {
             steps {
