@@ -8,7 +8,7 @@ pipeline{
     agent { label "$jenkins_agent" }
 
     environment {
-        readprop = props = readProperties(defaults: d, file: 'variable.properties')
+        readprop = readProperties(defaults: d, file: 'variable.properties')
         SCHEDULE = "$readprop.SCHEDULE"
     }
     triggers {
