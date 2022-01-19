@@ -17,15 +17,15 @@ pipeline{
     // }
 
     triggers {
-        cron(cron_string)
+        cron()
     }
     stages{
         stage('Welcome to jenkins') {
             steps {
                 script {
                     echo "Hello anjana How are you?"
-                    echo "${SCHEDULE}"
-                    echo "${TZ}"
+                    echo "${cron_string}"
+                    //echo "${TZ}"
                 }
             }
         }
