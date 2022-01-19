@@ -8,11 +8,6 @@ pipeline{
         SCHEDULE = "$readprop.SCHEDULE"
         TZ = "$readprop.TZ"
     }
-    triggers {
-        genericTrigger{
-            cron("")
-        }
-    }
 
     stages{
         stage('Welcome to jenkins') {
@@ -24,5 +19,8 @@ pipeline{
                 }
             }
         }
+    }
+    triggers {
+        cron("${TZ} \n ${SCHEDULE}")
     }
 }
