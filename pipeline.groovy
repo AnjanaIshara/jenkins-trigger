@@ -1,7 +1,7 @@
 def jenkins_agent = 'master'
 def SCHEDULE = "59 16 * * 1-5"
 def TZ = "TZ = Asia/Colombo"
-node{
+node("$jenkins_agent"){
     readprop = readProperties file: 'variable.properties'
     def cron_string = readprop['SCHEDULE']
     echo "${cron_string}"
