@@ -1,7 +1,6 @@
 def jenkins_agent = 'master'
-def readprop = 'variable.properties'
-def TZ = readprop['TZ']
-def SCHEDULE = readprop['SCHEDULE']
+def readprop = readFile 'variable.properties'
+
 pipeline{
     agent { label "$jenkins_agent" }
 
