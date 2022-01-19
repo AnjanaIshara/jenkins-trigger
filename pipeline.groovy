@@ -1,6 +1,8 @@
 def jenkins_agent = 'master'
 def SCHEDULE = "59 16 * * 1-5"
 def TZ = "TZ = Asia/Colombo"
+String cron_string = "28 17 * * 1-5"
+
 pipeline{
     agent { label "$jenkins_agent" }
 
@@ -12,7 +14,7 @@ pipeline{
     }
 
     triggers {
-        cron("${SCHEDULE}")
+        cron(cron_string)
     }
     stages{
         stage('Welcome to jenkins') {
