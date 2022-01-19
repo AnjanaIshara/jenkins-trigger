@@ -9,7 +9,7 @@ pipeline{
         TZ = "$readprop.TZ"
     }
     triggers {
-        cron("")
+        cron("${SCHEDULE}")
     }
 
     stages{
