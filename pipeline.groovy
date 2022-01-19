@@ -4,7 +4,7 @@ pipeline{
     agent { label "$jenkins_agent" }
 
     triggers {
-        cron("*/1 * * * *")
+        cron("")
     }
 
     stages{
