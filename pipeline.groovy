@@ -9,11 +9,11 @@ pipeline{
     agent { label "$jenkins_agent" }
 
 
-    environment {
+    // environment {
         
-        //SCHEDULE = "$readprop.SCHEDULE"
-        //TZ = "$readprop.TZ"
-    }
+    //     //SCHEDULE = "$readprop.SCHEDULE"
+    //     //TZ = "$readprop.TZ"
+    // }
 
     triggers {
         cron(cron_string)
