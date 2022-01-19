@@ -3,11 +3,6 @@ def jenkins_agent = 'master'
 pipeline{
     agent { label "$jenkins_agent" }
 
-    triggers {
-        parameterizedCron('''
-            */2 * * * *
-        ''')
-    }
 
     environment {
         readprop = readProperties file: 'variable.properties'
@@ -15,6 +10,11 @@ pipeline{
         TZ = "$readprop.TZ"
     }
 
+    triggers {
+        parameterizedCron('''
+            ${SCHEDULE}
+        ''')
+    }
     stages{
         stage('Welcome to jenkins') {
             steps {
