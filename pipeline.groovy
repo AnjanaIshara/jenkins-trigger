@@ -1,5 +1,5 @@
 def jenkins_agent = 'master'
-def SCHEDULE = "57 16 * * 1-5"
+def SCHEDULE = "59 16 * * 1-5"
 def TZ = "TZ = Asia/Colombo"
 pipeline{
     agent { label "$jenkins_agent" }
