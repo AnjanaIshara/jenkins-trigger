@@ -1,10 +1,14 @@
 def jenkins_agent = 'master'
 
+def d = [
+  'SCHEDULE':'*/1 * * * *'
+]
+
 pipeline{
     agent { label "$jenkins_agent" }
 
     environment {
-        readprop = readProperties file:'variable.properties'
+        readprop = props = readProperties(defaults: d, file: 'variable.properties')
         SCHEDULE = "$readprop.SCHEDULE"
     }
     triggers {
