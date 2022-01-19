@@ -21,6 +21,6 @@ pipeline{
         }
     }
     triggers {
-        cron("${TZ} \n ${SCHEDULE}")
+        cron("${SCHEDULE}")
     }
 }
