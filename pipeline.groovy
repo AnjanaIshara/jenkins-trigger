@@ -17,7 +17,7 @@ pipeline{
     // }
 
     triggers {
-        cron()
+        cron("")
     }
     stages{
         stage('Welcome to jenkins') {
