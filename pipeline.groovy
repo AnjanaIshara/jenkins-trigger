@@ -1,5 +1,5 @@
 def jenkins_agent = 'master'
-
+def SCHEDULE
 pipeline{
     agent { label "$jenkins_agent" }
 
