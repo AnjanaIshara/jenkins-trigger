@@ -1,7 +1,7 @@
 def jenkins_agent = 'master'
 
 def d = [
-  'SCHEDULE':'*/1 * * * *'
+  'SCHEDULE':'*/10 * * * *'
 ]
 
 pipeline{
@@ -20,7 +20,7 @@ pipeline{
             steps {
                 script {
                     echo "Hello anjana How are you?"
-                    echo $env.JOB_BASE_NAME
+                    echo $SCHEDULE
                 }
             }
         }
