@@ -5,9 +5,9 @@ node("$jenkins_agent"){
     readprop = readProperties file: 'variable.properties'
     def cron_string = readprop['SCHEDULE']
     echo "${cron_string}"
-    triggers {
-        cron("${cron_string}")
-    }
+    // triggers {
+    //     cron("${cron_string}")
+    // }
 }
 
 pipeline{
@@ -26,7 +26,7 @@ pipeline{
             steps {
                 script {
                     echo "Hello anjana How are you?"
-                    //echo "${cron_string}"
+                    echo "${cron_string}"
                     //echo "${TZ}"
                 }
             }
