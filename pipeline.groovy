@@ -9,7 +9,7 @@ pipeline{
         TZ = "$readprop.TZ"
     }
     triggers {
-        cron("${TZ} \n ${SCHEDULE}")
+        cron("")
     }
 
     stages{
@@ -18,6 +18,7 @@ pipeline{
                 script {
                     echo "Hello anjana How are you?"
                     echo "${SCHEDULE}"
+                    echo "${TZ}"
                 }
             }
         }
