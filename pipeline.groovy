@@ -2,14 +2,15 @@ def jenkins_agent = 'master'
 def SCHEDULE = "59 16 * * 1-5"
 def TZ = "TZ = Asia/Colombo"
 
+readprop = readProperties file: 'variable.properties'
 
+String cron_string = readprop['SCHEDULE']
 pipeline{
     agent { label "$jenkins_agent" }
 
 
     environment {
-        readprop = readProperties file: 'variable.properties'
-        String cron_string = "29 17 * * 1-5"
+        
         //SCHEDULE = "$readprop.SCHEDULE"
         //TZ = "$readprop.TZ"
     }
