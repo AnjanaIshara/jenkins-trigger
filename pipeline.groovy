@@ -22,7 +22,7 @@ pipeline{
     // }
 
     triggers {
-        parameterizedCron(CRON_SETTINGS)
+        parameterizedCron(cron_string)
     } 
     stages{
         stage('Welcome to jenkins') {
