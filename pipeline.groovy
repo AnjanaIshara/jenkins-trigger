@@ -5,7 +5,7 @@ pipeline{
 
     environment {
         readprop = readProperties file: 'variable.properties'
-        SCHEDULE = [$readprop.SCHEDULE]
+        SCHEDULE = ["${readprop.SCHEDULE}"]
         TZ = "$readprop.TZ"
     }
 
