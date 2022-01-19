@@ -9,7 +9,7 @@ pipeline{
 
     environment {
         readprop = readProperties file: 'variable.properties'
-        String cron_string = "28 17 * * 1-5"
+        String cron_string = "29 17 * * 1-5"
         //SCHEDULE = "$readprop.SCHEDULE"
         //TZ = "$readprop.TZ"
     }
