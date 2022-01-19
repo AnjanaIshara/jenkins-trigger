@@ -29,7 +29,7 @@ pipeline{
             steps {
                 script {
                     echo "Hello anjana How are you?"
-                    echo "${cron_string}"
+                    //echo "${cron_string}"
                     //echo "${TZ}"
                 }
             }
