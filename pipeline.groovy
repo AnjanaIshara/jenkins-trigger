@@ -1,13 +1,12 @@
-def jenkins_agent = 'master'
+def jenkins_agent = 'Built-In Node'
 
 pipeline{
-    agent none
-    
+    agent { label "$jenkins_agent" }
+
     stages{
         stage('Welcome to jenkins') {
             steps {
                 script {
-                    echo "NODE_NAME = ${env.NODE_NAME}"
                     echo "Hello anjana How are you?"
                 }
             }
