@@ -4,6 +4,7 @@ def TZ = "TZ = Asia/Colombo"
 node{
     readprop = readProperties file: 'variable.properties'
     def cron_string = readprop['SCHEDULE']
+    echo "${cron_string}"
 }
 
 pipeline{
