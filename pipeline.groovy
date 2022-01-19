@@ -2,9 +2,9 @@ def jenkins_agent = 'master'
 def SCHEDULE = "59 16 * * 1-5"
 def TZ = "TZ = Asia/Colombo"
 CRON_SETTINGS = '''*/3 * * * *'''
+readprop = readProperties file: 'variable.properties'
+def cron_string = readprop['SCHEDULE']
 node("$jenkins_agent"){
-    readprop = readProperties file: 'variable.properties'
-    def cron_string = readprop['SCHEDULE']
     echo "${cron_string}"
     // triggers {
     //     cron("${cron_string}")
@@ -22,7 +22,7 @@ pipeline{
     // }
 
     triggers {
-        parameterizedCron(cron_string)
+        parameterizedCron(CRON_SETTINGS)
     } 
     stages{
         stage('Welcome to jenkins') {
