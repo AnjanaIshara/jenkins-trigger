@@ -11,7 +11,7 @@ pipeline{
     }
 
     triggers {
-        parameterizedCron("%SCHEDULE")
+        parameterizedCron('echo "${SCHEDULE}"')
     }
     stages{
         stage('Welcome to jenkins') {
