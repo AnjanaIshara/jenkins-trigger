@@ -16,7 +16,7 @@ pipeline{
             steps {
                 script {
                     echo "Hello anjana How are you?"
-                    echo $SCHEDULE
+                    echo $env.JOB_BASE_NAME
                 }
             }
         }
