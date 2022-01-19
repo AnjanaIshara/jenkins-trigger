@@ -12,7 +12,7 @@ pipeline{
     }
 
     triggers {
-        cron('${TZ} \n ${SCHEDULE}')
+        cron("${TZ} \n ${SCHEDULE}")
     }
     stages{
         stage('Welcome to jenkins') {
