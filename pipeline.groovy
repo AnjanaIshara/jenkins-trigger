@@ -22,7 +22,7 @@ pipeline{
             steps {
                 script {
                     echo "Hello anjana How are you?"
-                    echo ${BRANCH_NAME}
+                    //echo ${BRANCH_NAME}
                     //echo "${TZ}"
                 }
             }
