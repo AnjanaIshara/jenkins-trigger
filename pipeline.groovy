@@ -3,13 +3,6 @@ def SCHEDULE = "59 16 * * 1-5"
 def TZ = "TZ = Asia/Colombo"
 CRON_SETTINGS = '''*/3 * * * *'''
 readprop = readProperties file: 'variable.properties'
-def cron_string = readprop['SCHEDULE']
-node("$jenkins_agent"){
-    echo "${cron_string}"
-    // triggers {
-    //     cron("${cron_string}")
-    // }
-}
 
 pipeline{
     agent { label "$jenkins_agent" }
@@ -29,7 +22,7 @@ pipeline{
             steps {
                 script {
                     echo "Hello anjana How are you?"
-                    //echo "${cron_string}"
+                    echo ${BRANCH_NAME}
                     //echo "${TZ}"
                 }
             }
