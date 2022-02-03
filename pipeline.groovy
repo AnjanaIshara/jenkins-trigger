@@ -11,9 +11,9 @@ pipeline{
     //     //TZ = "$readprop.TZ"
     // }
 
-    triggers {
-        parameterizedCron(CRON_SETTINGS)
-    } 
+    // triggers {
+    //     parameterizedCron(CRON_SETTINGS)
+    // } 
     stages{
         stage('Welcome to jenkins') {
             steps {
