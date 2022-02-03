@@ -1,8 +1,5 @@
 def jenkins_agent = 'master'
-def SCHEDULE = "59 16 * * 1-5"
-def TZ = "TZ = Asia/Colombo"
-CRON_SETTINGS = '''*/3 * * * *'''
-readprop = readProperties file: 'variable.properties'
+
 
 pipeline{
     agent { label "$jenkins_agent" }
