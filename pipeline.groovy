@@ -11,15 +11,16 @@ pipeline{
     //     //TZ = "$readprop.TZ"
     // }
 
-    // triggers {
-    //     parameterizedCron(CRON_SETTINGS)
-    // } 
+    triggers {
+        when {branch "master"}
+        cron("*/3 * * * *")
+    } 
     stages{
         stage('Welcome to jenkins') {
             steps {
                 script {
                     echo "Hello anjana How are you?"
-                    echo env.BRANCH_NAME
+                    //echo env.BRANCH_NAME
                     //echo "${TZ}
                 }
             }
